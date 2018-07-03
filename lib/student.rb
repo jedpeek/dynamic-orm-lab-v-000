@@ -48,8 +48,8 @@ class Student < InteractiveRecord
 
   def self.find_by(x={})
     x.map do |k,v|
-      sql = "SELECT * FROM #{self.table_name} WHERE ? = ?"
-      DB[:conn].execute(sql, k.to_s, v.to_s).first
+      sql = "SELECT * FROM #{self.table_name} WHERE #{k} = ?"
+      DB[:conn].execute(sql, k.to_s, v).first
     end
   end
 end
