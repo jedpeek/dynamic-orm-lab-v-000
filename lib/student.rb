@@ -49,7 +49,7 @@ class Student < InteractiveRecord
   def self.find_by(x={})
     x.map do |k,v|
       sql = "SELECT * FROM #{self.table_name} WHERE #{k} = ?"
-      DB[:conn].execute(sql, k.to_s, v).first
+      DB[:conn].execute(sql, v).first
     end
   end
 end
