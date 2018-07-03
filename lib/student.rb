@@ -52,7 +52,4 @@ class Student < InteractiveRecord
       DB[:conn].execute(sql, k, v).first
     end
   end
-
-
-
 end
